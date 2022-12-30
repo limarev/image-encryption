@@ -18,15 +18,18 @@
       },
       "architecture": {
         "strategy": "external",
-        "value": "x64"
-      },
-      "vendor": {
-        "jetbrains.com/clion": {
-          "toolchain": "Default"
-        }
+        "value": "arm64"
       },
       "environment": {
-        "CLANG_TOOLCHAIN": "/opt/homebrew/opt/llvm/Toolchains/LLVM15.0.6.xctoolchain"
+        "CLANG_PATH": "/opt/homebrew/opt/llvm/Toolchains/LLVM15.0.6.xctoolchain"
+      },
+      "toolchainFile": "${sourceDir}/darwin-arm64-clang.cmake"
+    },
+    {
+      "name": "debug",
+      "inherits": "CI-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
       }
     }
   ],
